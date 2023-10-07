@@ -2,4 +2,5 @@
 [![Actions Status](https://github.com/diplomatgmg/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/diplomatgmg/frontend-project-44/actions)
 
 ### Asciinema record
-https://asciinema.org/a/7X3E5Gm6ur6Fp6x6ZWRzoFSDx
+brain-even: https://asciinema.org/a/7X3E5Gm6ur6Fp6x6ZWRzoFSDx  
+brain-calc: https://asciinema.org/a/uwqJIvB9qJtkGsigq5HTplTFJ
