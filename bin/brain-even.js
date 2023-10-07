@@ -1,14 +1,15 @@
+#!/usr/bin/env node
+
 import readlineSync from "readline-sync";
+import getName from "../src/cli.js";
 
-export default () => {
-    console.log("\nAnswer \"yes\" if the number is even, otherwise answer \"no\".");
+function evenOrOddGame() {
+    console.log("Answer \"yes\" if the number is even, otherwise answer \"no\".");
 
-    let countCorrectAnswers = 0;
-
-    while (countCorrectAnswers !== 3) {
+    for (let i = 0; i < 3; i += 1) {
         const randomNumber = Math.floor(Math.random() * 100);
 
-        console.log(`\nQuestion ${randomNumber}`);
+        console.log(`Question ${randomNumber}`);
 
         const userAnswer = readlineSync.question("Your answer: ");
         const isEven = randomNumber % 2 === 0;
@@ -16,9 +17,23 @@ export default () => {
 
         if (isCorrect) {
             console.log("Correct!");
-            countCorrectAnswers += 1;
         } else {
-            countCorrectAnswers = 0;
+            const correctAnswer = userAnswer === "yes" ? "no" : "yes";
+            console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+            return false;
         }
     }
-};
+    return true;
+}
+
+console.log("Welcome to the Brain Games!");
+
+const name = getName();
+console.log(`Hello, ${name}!`);
+const winGame = evenOrOddGame();
+
+if (winGame) {
+    console.log(`Congratulations, ${name}!`);
+} else {
+    console.log(`Try one more time, ${name} <3`);
+}
