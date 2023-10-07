@@ -9,9 +9,4 @@ plugins:
 rules:
   no-console: off
   import/extensions: off
-  quotes:
-    - "error"
-    - "double"
-  indent:
-    - "error"
-    - 4
+  switch-colon-spacing: off
