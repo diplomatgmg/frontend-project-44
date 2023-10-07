@@ -19,9 +19,7 @@ function calcGame() {
 
   const userAnswer = getUserAnswer();
 
-  if (expressionResult === Number(userAnswer)) {
-    console.log('Correct!');
-  } else {
+  if (!(expressionResult === Number(userAnswer))) {
     return { winGame: false, userAnswer, correctAnswer: expressionResult };
   }
   return { winGame: true };

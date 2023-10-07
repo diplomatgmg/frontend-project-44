@@ -8,7 +8,9 @@ export default function runGame(gameFunction) {
   for (let i = 0; i < 3; i += 1) {
     const { winGame, userAnswer = null, correctAnswer = null } = gameFunction();
 
-    if (!winGame) {
+    if (winGame) {
+      console.log('Correct!\n');
+    } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       return console.log(`Try one more time, ${name} <3`);
     }

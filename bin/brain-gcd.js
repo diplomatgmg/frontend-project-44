@@ -13,9 +13,7 @@ function gcdGame() {
 
   const userAnswer = getUserAnswer();
 
-  if (greatestDivisor === Number(userAnswer)) {
-    console.log('Correct');
-  } else {
+  if (!(greatestDivisor === Number(userAnswer))) {
     return { winGame: false, userAnswer, correctAnswer: greatestDivisor };
   }
   return { winGame: true };

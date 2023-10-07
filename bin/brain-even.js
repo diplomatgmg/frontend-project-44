@@ -12,15 +12,13 @@ function evenOrOddGame() {
 
   const userAnswer = getUserAnswer();
   const isEven = randomNumber % 2 === 0;
+
   const isCorrect = (userAnswer === 'yes' && isEven) || (userAnswer === 'no' && !isEven);
-
-  if (isCorrect) {
-    console.log('Correct!');
-    return { winGame: true };
+  if (!isCorrect) {
+    const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
+    return { winGame: false, userAnswer, correctAnswer };
   }
-
-  const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
-  return { winGame: false, userAnswer, correctAnswer };
+  return { winGame: true };
 }
 
 runGame(evenOrOddGame);
