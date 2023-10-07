@@ -1,39 +1,26 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import getName from '../src/cli.js';
-import printWelcome from './brain-games.js';
+import runGame from '../src/index.js';
+import { getRandomNumber, getUserAnswer } from './services/service.js';
 
 function evenOrOddGame() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * 100);
+  const randomNumber = getRandomNumber();
 
-    console.log(`Question ${randomNumber}`);
+  console.log(`Question: ${randomNumber}`);
 
-    const userAnswer = readlineSync.question('Your answer: ');
-    const isEven = randomNumber % 2 === 0;
-    const isCorrect = (userAnswer === 'yes' && isEven) || (userAnswer === 'no' && !isEven);
+  const userAnswer = getUserAnswer();
+  const isEven = randomNumber % 2 === 0;
+  const isCorrect = (userAnswer === 'yes' && isEven) || (userAnswer === 'no' && !isEven);
 
-    if (isCorrect) {
-      console.log('Correct!');
-    } else {
-      const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      return false;
-    }
+  if (isCorrect) {
+    console.log('Correct!');
+    return { winGame: true };
   }
-  return true;
+
+  const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
+  return { winGame: false, userAnswer, correctAnswer };
 }
 
-const name = getName();
-printWelcome(name);
-
-const winGame = evenOrOddGame();
-
-if (winGame) {
-  console.log(`Congratulations, ${name}!`);
-} else {
-  console.log(`Try one more time, ${name} <3`);
-}
+runGame(evenOrOddGame);
