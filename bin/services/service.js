@@ -1,7 +1,13 @@
 import readlineSync from 'readline-sync';
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 100);
+function getRandomNumber(canBeZero = true) {
+  let randomNumber = Math.floor(Math.random() * 100);
+  if (!canBeZero) {
+    while (randomNumber === 0) {
+      randomNumber = Math.floor(Math.random() * 100);
+    }
+  }
+  return randomNumber;
 }
 
 function getUserAnswer() {
