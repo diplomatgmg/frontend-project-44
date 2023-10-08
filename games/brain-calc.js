@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import getExpressionResult from './services/brain-calc-service.js';
-import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
+import getExpressionResult from '../services/brain-calc-service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from '../services/service-general.js';
 
 function calcGame() {
   const randomNumberA = getRandomNumber();

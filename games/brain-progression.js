@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
-import getProgressionArray from './services/brain-progression-service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from '../services/service-general.js';
+import getProgressionArray from '../services/brain-progression-service.js';
 import runGame from '../src/index.js';
 
 function progressionGame() {

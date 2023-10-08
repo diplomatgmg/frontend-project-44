@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
-import isPrime from './services/brain-prime-service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from '../services/service-general.js';
+import isPrime from '../services/brain-prime-service.js';
 
 function isPrimeGame() {
   const randomNumber = getRandomNumber({ max: 1000 });

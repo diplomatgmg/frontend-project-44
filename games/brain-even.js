@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from '../services/service-general.js';
 
 function evenOrOddGame() {
   const randomNumber = getRandomNumber();

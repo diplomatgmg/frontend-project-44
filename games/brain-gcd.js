@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 import runGame from '../src/index.js';
-import getGreatestDivisor from './services/brain-gcd-service.js';
-import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
+import getGreatestDivisor from '../services/brain-gcd-service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from '../services/service-general.js';
 
 function gcdGame() {
   const randomNumberA = getRandomNumber({ min: 1 });
