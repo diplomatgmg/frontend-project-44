@@ -15,7 +15,7 @@ export default function runGame(gameFunction, gameInstructionMessage) {
       console.log('Correct!');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      return console.log(`Try one more time, ${name} <3`);
+      return console.log(`Let's try again, ${name}!`);
     }
   }
 
