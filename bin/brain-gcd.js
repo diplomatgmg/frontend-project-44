@@ -10,9 +10,9 @@ function gcdGame() {
 
   console.log(`Question: ${randomNumberA} ${randomNumberB}`);
 
-  const userAnswer = getUserAnswer();
+  const userAnswer = getUserAnswer(true);
 
-  if (!(greatestDivisor === Number(userAnswer))) {
+  if (!(greatestDivisor === userAnswer)) {
     return { winGame: false, userAnswer, correctAnswer: greatestDivisor };
   }
   return { winGame: true };

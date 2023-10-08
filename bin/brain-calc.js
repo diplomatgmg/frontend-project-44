@@ -16,9 +16,9 @@ function calcGame() {
 
   console.log(`Question: ${randomNumberA} ${randomOperator} ${randomNumberB}`);
 
-  const userAnswer = getUserAnswer();
+  const userAnswer = getUserAnswer(true);
 
-  if (!(expressionResult === Number(userAnswer))) {
+  if (!(expressionResult === userAnswer)) {
     return { winGame: false, userAnswer, correctAnswer: expressionResult };
   }
   return { winGame: true };

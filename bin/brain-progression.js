@@ -15,9 +15,9 @@ function progressionGame() {
   progression[randomIndexProgression] = '..';
 
   console.log('Question:', progression.join(' '));
-  const userAnswer = getUserAnswer();
+  const userAnswer = getUserAnswer(true);
 
-  if (!(randomNumberProgression === Number(userAnswer))) {
+  if (!(randomNumberProgression === userAnswer)) {
     return { winGame: false, userAnswer, correctAnswer: randomNumberProgression };
   }
   return { winGame: true };
