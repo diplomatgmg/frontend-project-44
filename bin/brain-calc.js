@@ -14,7 +14,6 @@ function calcGame() {
 
   const expressionResult = getExpressionResult(randomNumberA, randomNumberB, randomOperator);
 
-  console.log('What is the result of the expression?');
   console.log(`Question: ${randomNumberA} ${randomOperator} ${randomNumberB}`);
 
   const userAnswer = getUserAnswer();
@@ -25,4 +24,5 @@ function calcGame() {
   return { winGame: true };
 }
 
-runGame(calcGame);
+const instructionMessage = 'What is the result of the expression?';
+runGame(calcGame, instructionMessage);

@@ -4,8 +4,6 @@ import runGame from '../src/index.js';
 import { getRandomNumber, getUserAnswer } from './services/service.js';
 
 function evenOrOddGame() {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
   const randomNumber = getRandomNumber();
 
   console.log(`Question: ${randomNumber}`);
@@ -21,4 +19,5 @@ function evenOrOddGame() {
   return { winGame: true };
 }
 
-runGame(evenOrOddGame);
+const instructionMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+runGame(evenOrOddGame, instructionMessage);

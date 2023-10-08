@@ -8,7 +8,6 @@ function gcdGame() {
 
   const greatestDivisor = getGreatestDivisor(randomNumberA, randomNumberB);
 
-  console.log('Find the greatest common divisor of given numbers.');
   console.log(`Question: ${randomNumberA} ${randomNumberB}`);
 
   const userAnswer = getUserAnswer();
@@ -19,4 +18,5 @@ function gcdGame() {
   return { winGame: true };
 }
 
-runGame(gcdGame);
+const instructionMessage = 'Find the greatest common divisor of given numbers.';
+runGame(gcdGame, instructionMessage);
