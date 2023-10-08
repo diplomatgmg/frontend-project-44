@@ -3,8 +3,8 @@ import getGreatestDivisor from './services/brain-gcd-service.js';
 import { getRandomNumber, getUserAnswer } from './services/service.js';
 
 function gcdGame() {
-  const randomNumberA = getRandomNumber(false);
-  const randomNumberB = getRandomNumber(false);
+  const randomNumberA = getRandomNumber({ min: 1 });
+  const randomNumberB = getRandomNumber({ min: 1 });
 
   const greatestDivisor = getGreatestDivisor(randomNumberA, randomNumberB);
 
