@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomNumber, getUserAnswer } from './services/service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
 import getProgressionArray from './services/brain-progression-service.js';
 import runGame from '../src/index.js';
 
@@ -15,12 +15,11 @@ function progressionGame() {
   progression[randomIndexProgression] = '..';
 
   console.log('Question:', progression.join(' '));
-  const userAnswer = getUserAnswer(true);
 
-  if (!(randomNumberProgression === userAnswer)) {
-    return { winGame: false, userAnswer, correctAnswer: randomNumberProgression };
-  }
-  return { winGame: true };
+  const userAnswer = getUserAnswer(true);
+  const isCorrect = randomNumberProgression === userAnswer;
+
+  return getGameResult(isCorrect, userAnswer, randomNumberProgression);
 }
 
 const instructionMessage = 'What number is missing in the progression?';

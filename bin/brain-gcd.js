@@ -1,6 +1,6 @@
 import runGame from '../src/index.js';
 import getGreatestDivisor from './services/brain-gcd-service.js';
-import { getRandomNumber, getUserAnswer } from './services/service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
 
 function gcdGame() {
   const randomNumberA = getRandomNumber({ min: 1 });
@@ -11,11 +11,9 @@ function gcdGame() {
   console.log(`Question: ${randomNumberA} ${randomNumberB}`);
 
   const userAnswer = getUserAnswer(true);
+  const isCorrect = greatestDivisor === userAnswer;
 
-  if (!(greatestDivisor === userAnswer)) {
-    return { winGame: false, userAnswer, correctAnswer: greatestDivisor };
-  }
-  return { winGame: true };
+  return getGameResult(isCorrect, userAnswer, greatestDivisor);
 }
 
 const instructionMessage = 'Find the greatest common divisor of given numbers.';

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import { getRandomNumber, getUserAnswer } from './services/service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
 import isPrime from './services/brain-prime-service.js';
 
 function isPrimeGame() {
@@ -12,12 +12,9 @@ function isPrimeGame() {
 
   const userAnswer = getUserAnswer();
   const isCorrect = (userAnswer === 'yes' && randomNumberIsPrime) || (userAnswer === 'no' && !randomNumberIsPrime);
+  const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
 
-  if (!isCorrect) {
-    const correctAnswer = userAnswer === 'yes' ? 'no' : 'yes';
-    return { winGame: false, userAnswer, correctAnswer };
-  }
-  return { winGame: true };
+  return getGameResult(isCorrect, userAnswer, correctAnswer);
 }
 
 const instructionMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';

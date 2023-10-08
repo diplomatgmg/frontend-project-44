@@ -2,7 +2,7 @@
 
 import runGame from '../src/index.js';
 import getExpressionResult from './services/brain-calc-service.js';
-import { getRandomNumber, getUserAnswer } from './services/service.js';
+import { getGameResult, getRandomNumber, getUserAnswer } from './services/service.js';
 
 function calcGame() {
   const randomNumberA = getRandomNumber();
@@ -17,11 +17,9 @@ function calcGame() {
   console.log(`Question: ${randomNumberA} ${randomOperator} ${randomNumberB}`);
 
   const userAnswer = getUserAnswer(true);
+  const isCorrect = expressionResult === userAnswer;
 
-  if (!(expressionResult === userAnswer)) {
-    return { winGame: false, userAnswer, correctAnswer: expressionResult };
-  }
-  return { winGame: true };
+  return getGameResult(isCorrect, userAnswer, expressionResult);
 }
 
 const instructionMessage = 'What is the result of the expression?';

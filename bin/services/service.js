@@ -9,4 +9,11 @@ function getUserAnswer(integer = false) {
   return integer ? Number(userAnswer) : userAnswer;
 }
 
-export { getRandomNumber, getUserAnswer };
+function getGameResult(isCorrect, userAnswer, correctAnswer) {
+  if (!isCorrect) {
+    return { winGame: false, userAnswer, correctAnswer };
+  }
+  return { winGame: true };
+}
+
+export { getRandomNumber, getUserAnswer, getGameResult };
