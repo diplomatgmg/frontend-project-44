@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-import printWelcome from '../bin/brain-games.js';
 
 export default function runGame(gameFunction, gameInstructionMessage) {
-  printWelcome();
+  console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
