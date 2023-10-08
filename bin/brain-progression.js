@@ -9,7 +9,7 @@ function progressionGame() {
   const stepProgression = getRandomNumber({ min: 1, max: 20 });
 
   const progression = getProgressionArray(startProgression, stepProgression);
-  const randomIndexProgression = getRandomNumber({ max: 10 });
+  const randomIndexProgression = getRandomNumber({ max: 9 });
   const randomNumberProgression = progression[randomIndexProgression];
 
   progression[randomIndexProgression] = '..';
