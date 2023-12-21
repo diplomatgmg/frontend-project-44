@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-function getRandomNumber({ min = 0, max = 100 } = {}) {
+function getRandomNumber(min = 0, max = 100) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

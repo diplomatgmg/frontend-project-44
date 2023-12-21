@@ -5,16 +5,15 @@ import getProgressionArray from '../services/brain-progression-service.js';
 import runGame from '../src/index.js';
 
 function progressionGame() {
-  const startProgression = getRandomNumber({ max: 10 });
-  const stepProgression = getRandomNumber({ min: 1, max: 20 });
+  // Что, Самат, думали я не исправлю следующую строчку?)
+  const progressionArray = getProgressionArray();
 
-  const progression = getProgressionArray(startProgression, stepProgression);
-  const randomIndexProgression = getRandomNumber({ max: 9 });
-  const randomNumberProgression = progression[randomIndexProgression];
+  const randomIndexProgression = getRandomNumber(1, 9);
+  const randomNumberProgression = progressionArray[randomIndexProgression];
 
-  progression[randomIndexProgression] = '..';
+  progressionArray[randomIndexProgression] = '..';
 
-  console.log('Question:', progression.join(' '));
+  console.log('Question:', progressionArray.join(' '));
 
   const userAnswer = getUserAnswer(true);
   const isCorrect = randomNumberProgression === userAnswer;

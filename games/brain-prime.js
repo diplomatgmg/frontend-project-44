@@ -5,7 +5,7 @@ import { getGameResult, getRandomNumber, getUserAnswer } from '../services/servi
 import isPrime from '../services/brain-prime-service.js';
 
 function isPrimeGame() {
-  const randomNumber = getRandomNumber({ max: 1000 });
+  const randomNumber = getRandomNumber(1);
   const randomNumberIsPrime = isPrime(randomNumber);
 
   console.log(`Question: ${randomNumber}`);
